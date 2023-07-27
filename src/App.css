@@ -1,38 +1,802 @@
 .App {
-  text-align: center;
+    text-align: center;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* nav brand */
+.brand_name {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand_logo {
+    font-size: 1.5rem;
+    /* border: 1px solid rgb(121, 114, 229); */
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-sizing: content-box;
+}
+.brand_title {
+    font-family: "Merienda", cursive, "Franklin Gothic Medium", "Arial Narrow",
+        Arial, sans-serif;
+    font-size: 2rem;
+    display: inline-block;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* hero section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    background-image: url("../public/kebab3.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-attachment: scroll;
+    background-size: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* hero image */
+.hero_img {
+    display: inline-block;
+    height: 20rem;
+    width: 20rem;
+    animation-name: hero_img_anim;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
 }
 
-.App-link {
-  color: #61dafb;
+/* tagline */
+
+.tagline {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.2rem;
+    margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sub-tagline {
+    font-size: 2rem;
+    font-weight: 400;
+    color: rgb(206, 203, 203);
+    font-style: italic;
+    letter-spacing: none;
+    margin: 0;
+}
+
+/* header menu button */
+/* button */
+
+.btn_menu {
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.btn_menu:not(:last-child) {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.btn_menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+}
+
+.btn_menu::before {
+    left: -100%;
+    transition: all 0.5s ease;
+}
+
+.btn_menu:hover {
+    box-shadow: grey;
+}
+
+.btn_menu::before {
+    left: 100%;
+}
+
+.btn_menu::before {
+    animation: shine 0.7s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+        transition-property: left;
+    }
+
+    100% {
+        left: 100%;
+        transition-property: left;
+    }
+}
+
+/* link icons */
+.link_icons_holder {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    z-index: 2;
+    background-color: white;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.icon {
+    font-size: 3rem;
+    /* color: rgb(25, 151, 113); */
+    color: black;
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+}
+
+.icon.insta {
+    margin-bottom: 0;
+}
+
+.img-icon {
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+    border-radius: 0.2rem;
+}
+
+.icon:hover,
+.img-icon:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* menu header */
+
+.menu_header,
+.sub_menu_header {
+    font-size: 6rem;
+    font-weight: 800;
+    background-color: black;
+    color: white;
+}
+
+.sub_menu_header {
+    display: inline-block;
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0rem;
+    border-bottom: 1px solid grey;
+}
+
+.sub_menu_header.two {
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    border: 0;
+    background-color: rgb(183, 6, 8);
+}
+
+.img-holder {
+    position: relative;
+}
+/* social icons */
+.social_icon_holder {
+    position: absolute;
+    top: 6.5%;
+    left: 25%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.group-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.social_icon {
+    width: auto;
+    height: 4rem;
+}
+
+.social_icon.fb {
+    height: 6rem;
+}
+
+/* slider */
+.carosoule_holder {
+    width: 100%;
+}
+
+.carosoule_holder img {
+    width: 100%;
+    height: 75vh;
+    object-fit: contain;
+}
+
+/* footer */
+footer {
+    color: black;
+    padding: 2.5rem 0;
+    font-size: 1.4rem;
+    background-color: whitesmoke;
+}
+
+/* mobile devices */
+
+@media screen and (max-width: 1080px) {
+    .tagline {
+        font-size: 6rem;
+    }
+
+    .menu_header {
+        font-size: 5rem;
+    }
+
+    .social_icon_holder {
+        top: 5.5%;
+        left: 22%;
+        gap: 2rem;
+    }
+
+    .link_icons_holder {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .tagline {
+        font-size: 4rem;
+    }
+
+    .sub-tagline {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 912px) {
+    .hero {
+        flex-direction: column;
+    }
+    .tagline {
+        font-size: 5rem;
+    }
+
+    .sub-tagline {
+        font-size: 2rem;
+    }
+
+    .menu_header {
+        font-size: 4rem;
+    }
+    .sub_menu_header {
+        font-size: 2.7rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 2.7rem;
+    }
+
+    .social_icon.fb {
+        height: 4.5rem;
+    }
+
+    .social_icon_holder {
+        top: 6.3%;
+        left: 22%;
+        gap: 2rem;
+    }
+    .group-icons {
+        gap: 1.4rem;
+    }
+
+    .link_icons_holder {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .tagline {
+        font-size: 4rem;
+    }
+
+    .sub-tagline {
+        font-size: 1.7rem;
+    }
+
+    .menu_header {
+        font-size: 4rem;
+    }
+
+    .sub_menu_header {
+        font-size: 2.5rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 2.7rem;
+    }
+
+    .social_icon.fb {
+        height: 4rem;
+    }
+
+    .social_icon_holder {
+        top: 6.3%;
+        left: 20%;
+        gap: 2rem;
+    }
+    .group-icons {
+        gap: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tagline {
+        font-size: 4rem;
+    }
+
+    .sub-tagline {
+        font-size: 1.5rem;
+    }
+
+    .menu_header {
+        font-size: 3.5rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 2rem;
+    }
+
+    .social_icon.fb {
+        height: 3.3rem;
+    }
+
+    .social_icon_holder {
+        top: 7.1%;
+        left: 25%;
+        gap: 2.7rem;
+    }
+
+    .group-icons {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .tagline {
+        font-size: 4rem;
+    }
+
+    .sub-tagline {
+        font-size: 1rem;
+    }
+
+    .menu_header {
+        font-size: 3.2rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 2rem;
+    }
+
+    .social_icon.fb {
+        height: 3.3rem;
+    }
+
+    .social_icon_holder {
+        top: 6.5%;
+        left: 20%;
+        gap: 2rem;
+    }
+
+    .group-icons {
+        gap: 0.8rem;
+    }
+    .carosoule_holder img {
+        height: 70vh;
+    }
+}
+@media screen and (max-width: 590px) {
+    .tagline {
+        font-size: 3.5rem;
+    }
+    .sub_menu_header {
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .tagline {
+        font-size: 3.5rem;
+    }
+
+    .sub-tagline {
+        font-size: 1rem;
+    }
+
+    .menu_header {
+        font-size: 3rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 2rem;
+    }
+
+    .social_icon.fb {
+        height: 3.3rem;
+    }
+
+    .social_icon_holder {
+        top: 6%;
+        left: 17%;
+        gap: 1.4rem;
+    }
+
+    .icon {
+        font-size: 1.7rem;
+    }
+
+    .img-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .group-icons {
+        gap: 0.8rem;
+    }
+
+    .carosoule_holder img {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tagline {
+        font-size: 3rem;
+    }
+
+    .sub-tagline {
+        font-size: 0.9rem;
+    }
+
+    .menu_header {
+        font-size: 2.5rem;
+    }
+
+    .sub_menu_header {
+        font-size: 2rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 1.6rem;
+    }
+
+    .social_icon.fb {
+        height: 3.2rem;
+    }
+
+    .social_icon_holder {
+        top: 6%;
+        left: 20%;
+        gap: 1.4rem;
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
+
+    .img-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .group-icons {
+        gap: 0.8rem;
+    }
+    .carosoule_holder img {
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .tagline {
+        font-size: 2.6rem;
+    }
+
+    .sub-tagline {
+        font-size: 0.7rem;
+    }
+
+    .menu_header {
+        font-size: 2.5rem;
+    }
+
+    .sub_menu_header {
+        font-size: 1.7rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 1.4rem;
+    }
+
+    .social_icon.fb {
+        height: 2.7rem;
+    }
+
+    .social_icon_holder {
+        top: 5.5%;
+        left: 20%;
+        gap: 1.2rem;
+    }
+
+    .icon {
+        font-size: 1.8rem;
+    }
+
+    .img-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .group-icons {
+        gap: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .tagline {
+        font-size: 2.4rem;
+    }
+
+    .sub-tagline {
+        font-size: 0.7rem;
+    }
+
+    .menu_header {
+        font-size: 2.5rem;
+    }
+
+    .sub_menu_header {
+        font-size: 1.5rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 1.4rem;
+    }
+
+    .social_icon.fb {
+        height: 2.7rem;
+    }
+
+    .social_icon_holder {
+        top: 5.5%;
+        left: 19%;
+        gap: 0.5rem;
+    }
+
+    .icon {
+        font-size: 1.7rem;
+    }
+
+    .img-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .group-icons {
+        gap: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .tagline {
+        font-size: 2rem;
+    }
+    .brand_title {
+        font-size: 2.3rem;
+    }
+    .btn_menu {
+        padding: 0;
+    }
+
+    .sub-tagline {
+        font-size: 0.6rem;
+    }
+
+    .menu_header {
+        font-size: 2rem;
+    }
+
+    .sub_menu_header {
+        font-size: 1.3rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 1.2rem;
+    }
+
+    .social_icon.fb {
+        height: 2.7rem;
+    }
+
+    .social_icon_holder {
+        top: 5.5%;
+        left: 19%;
+        gap: 0.4rem;
+    }
+
+    .icon {
+        font-size: 1.7rem;
+    }
+
+    .img-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .group-icons {
+        gap: 0.4rem;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+
+    .carosoule_holder img {
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .tagline {
+        font-size: 1.9rem;
+    }
+
+    .sub-tagline {
+        font-size: 0.4rem;
+    }
+
+    .menu_header {
+        font-size: 1.8rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 1rem;
+    }
+
+    .social_icon.fb {
+        height: 2.4rem;
+    }
+
+    .social_icon_holder {
+        top: 5.5%;
+        left: 19%;
+        gap: 0.4rem;
+    }
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    .img-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .group-icons {
+        gap: 0.4rem;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .brand_title {
+        display: none;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+    }
+
+    .sub-tagline {
+        font-size: 0.4rem;
+    }
+
+    .menu_header {
+        font-size: 1.6rem;
+    }
+
+    .sub_menu_header {
+        font-size: 1.1rem;
+    }
+
+    .social_icon {
+        width: auto;
+        height: 0.8rem;
+    }
+
+    .social_icon.fb {
+        height: 1.8rem;
+    }
+
+    .social_icon_holder {
+        top: 5.5%;
+        left: 19%;
+        gap: 0.4rem;
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    .img-icon {
+        width: 17px;
+        height: 17px;
+    }
+
+    .group-icons {
+        gap: 0rem;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
+    .carosoule_holder img {
+        height: 30vh;
+    }
+}
+
+/* mobile landscape */
+
+@media screen and (max-height: 360px) and (orientation: landscape) {
+    .icon {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .img-icon {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 0.5;
+    }
+}
+
+@keyframes hero_img_anim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
