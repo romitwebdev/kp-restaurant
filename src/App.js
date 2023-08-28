@@ -7,18 +7,19 @@ import Menus from "./Menus";
 import Map from "./Map";
 import FooterComp from "./Footer";
 import Links from "./Links";
+import { useState } from "react";
+import Main from "./Main";
+
+import ContextProvider from "./ContextProvider";
+import CompHolder from "./CompHolder";
 
 function App() {
     return (
-        <div className="App">
-            <NavBar />
-            <Header />
-            <Links />
-            {/* <Slider /> */}
-            <Menus />
-            <Map />
-            <FooterComp />
-        </div>
+        <ContextProvider>
+            <div className="App">
+                <CompHolder />
+            </div>
+        </ContextProvider>
     );
 }
 

@@ -15,66 +15,46 @@ const Menus = () => {
                 <div className="img-holder">
                     <Row className="g-2">
                         <Col lg="6" sm="12">
-                            <div data-aos="fade-right">
-                                <Card className="shadow-lg p-2">
-                                    <Card.Img
-                                        src="1.png"
-                                        loading="lazy"
-                                    ></Card.Img>
-                                </Card>
-                            </div>
+                            {/* <div data-aos="fade-right"> */}
+                            <Card className="shadow-lg p-2">
+                                <Card.Img
+                                    src="kp1.jpg"
+                                    loading="lazy"
+                                ></Card.Img>
+                            </Card>
+                            {/* </div> */}
                         </Col>
 
                         <Col lg="6" sm="12">
-                            <div data-aos="fade-left">
-                                <Card className="shadow-lg p-2">
-                                    <Card.Img
-                                        src="2.png"
-                                        loading="lazy"
-                                    ></Card.Img>
-                                </Card>
-                            </div>
+                            {/* <div data-aos="fade-left"> */}
+                            <Card className="shadow-lg p-2">
+                                <Card.Img
+                                    src="kp2.jpg"
+                                    loading="lazy"
+                                ></Card.Img>
+                            </Card>
+                            {/* </div> */}
                         </Col>
 
                         <Col lg="6" sm="12">
-                            <div data-aos="fade-right">
-                                <Card className="shadow-lg p-2">
-                                    <Card.Img
-                                        src="3.png"
-                                        loading="lazy"
-                                    ></Card.Img>
-                                </Card>
-                            </div>
+                            {/* <div data-aos="fade-right"> */}
+                            <Card className="shadow-lg p-2">
+                                <Card.Img
+                                    src="kp3.jpg"
+                                    loading="lazy"
+                                ></Card.Img>
+                            </Card>
+                            {/* </div> */}
                         </Col>
                         <Col lg="6" sm="12">
-                            <div data-aos="fade-left">
-                                <Card className="shadow-lg p-2">
-                                    <Card.Img
-                                        src="4.png"
-                                        loading="lazy"
-                                    ></Card.Img>
-                                </Card>
-                            </div>
-                        </Col>
-                        <Col lg="6" sm="12">
-                            <div data-aos="fade-right">
-                                <Card className="shadow-lg p-2">
-                                    <Card.Img
-                                        src="5.png"
-                                        loading="lazy"
-                                    ></Card.Img>
-                                </Card>
-                            </div>
-                        </Col>
-                        <Col lg="6" sm="12">
-                            <div data-aos="fade-left">
-                                <Card className="shadow-lg p-2">
-                                    <Card.Img
-                                        src="6.png"
-                                        loading="lazy"
-                                    ></Card.Img>
-                                </Card>
-                            </div>
+                            {/* <div data-aos="fade-left"> */}
+                            <Card className="shadow-lg p-2">
+                                <Card.Img
+                                    src="kp4.jpg"
+                                    loading="lazy"
+                                ></Card.Img>
+                            </Card>
+                            {/* </div> */}
                         </Col>
                     </Row>
                 </div>
